@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- font awesome -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="{% static 'myapp/bootstrap.css' %}" />
+
+    <!-- JAVASCRIPT -->
+    <script src="{% static 'myapp/bootstrap.bundle.js' %}"></script>
+
+    <title>Los Pollos Hermanos</title>
+    <link rel="icon" type="image" href="{% static 'myapp/logo.png' %}" />
+
+    <!-- CONNECT CSS TO HTML -->
+    <link rel="stylesheet" href="{% static 'myapp/reservationstyle.css' %}" />
+    <link rel="stylesheet" href="{% static 'myapp/footstyle.css' %}" />
+  </head>
+
+  <body>
+    <!-- HEADER SECTION START -->
+    <div id="header">
+      <nav id="navbar">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'menu' %}">Menu</a></li>
+          <li><a href="{% url 'reservations' %}">Reservations</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">SignUp</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- HEADER SECTION END -->
+
+    <section id="reservation" class="reservation-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2 class="section-heading">Make a Reservation</h2>
+            <p class="tagline">
+              Book a table at Los Pollos Hermanos and enjoy a delightful dining
+              experience.
+            </p>
+            <form method="POST" action="">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="date">Date for Your Reservation:</label>
+                <input type="date" id="date" name="date" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="party-size">Group Size:</label>
+                <select id="party-size" name="party-size" class="form-control">
+                  {% for i in party_sizes %}
+                  <option value="{{ i }}">
+                    {{ i }} Person{% if i > 1 %}s{% endif %}
+                  </option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" />
+              </div>
+              <button type="submit" class="btn btn-primary">Book Now</button>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="{% static 'myapp/reservation.jpg' %}"
+              class="img-fluid"
+              alt="Reservation Image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer start -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>About Los Pollos Hermanos</h3>
+          <p>
+            Welcome to Los Pollos Hermanos, where something delicious is always
+            cooking. We pride ourselves on serving the best chicken dishes with
+            the finest ingredients.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Address: 123 Chicken Street, Albuquerque, NM</p>
+          <p>Phone: (505) 123-4567</p>
+          <p>Email: contact@lospolloshermanos.com</p>
+        </div>
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <a href="https://www.facebook.com">Facebook</a>
+          <a href="https://www.twitter.com">Twitter</a>
+          <a href="https://www.instagram.com">Instagram</a>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <a href="{% url 'home' %}">Home</a>
+          <a href="{% url 'menu' %}">Menu</a>
+          <a href="{% url 'reservations' %}">Reservations</a>
+          <a href="{% url 'login' %}">Login</a>
+          <a href="{% url 'signup' %}">SignUp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Los Pollos Hermanos. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

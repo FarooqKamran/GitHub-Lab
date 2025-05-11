@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+main {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.signup {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.signup h1 {
+    color: #d9534f;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.signup p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ffcc00;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.checkbox-group a {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+.btn-signup {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-signup:hover {
+    background-color: #e6b800;
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #666;
+}
+
+.login-link a {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* HEADER STYLING (Consistent with homestyle.css) */
+#header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 70px;
+    line-height: 55px;
+}
+
+#navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(52, 58, 64, 0.9);
+    height: 60px;
+    z-index: 0;
+}
+
+#navbar ul {
+    list-style-type: none;
+    display: flex;
+}
+
+#navbar ul li {
+    list-style: none;
+    padding-top: 1px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 1px;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+    font-family: cursive;
+}
+
+#navbar ul li:hover {
+    background: rgba(255, 213, 0, 0.8);
+    display: table;
+    cursor: pointer;
+    border-radius: 8px;
+    z-index: 0;
+}

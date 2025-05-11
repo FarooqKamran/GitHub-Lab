@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'myapp/bootstrap.css' %}">
+    <script src="{% static 'myapp/bootstrap.bundle.js' %}"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'myapp/logo.png' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'myapp/signupstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/footstyle.css' %}">
+
+    <title>Sign Up - Los Pollos Hermanos</title>
+</head>
+<body>
+    <!-- HEADER SECTION START -->
+    <div id="header">
+        <nav id="navbar">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'menu' %}">Menu</a></li>
+                <li><a href="{% url 'reservations' %}">Reservations</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- HEADER SECTION END -->
+
+    <!-- SIGN UP SECTION START -->
+    <main>
+        <section class="signup">
+            <h1>Join the Los Pollos Hermanos Family</h1>
+            <p>Create an account to enjoy exclusive offers, track your orders, and make reservations with ease!</p>
+            <form class="signup-form" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="usename">Username</label>
+                    <input type="text" id="full-name" name="username" placeholder="Enter Username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button type="submit" class="btn-signup">Sign Up</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+        </section>
+    </main>
+    <!-- SIGN UP SECTION END -->
+
+    <!-- FOOTER START -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Los Pollos Hermanos</h3>
+                <p>Welcome to Los Pollos Hermanos, where something delicious is always cooking.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Address: 123 Chicken Street, Albuquerque, NM</p>
+                <p>Phone: (505) 123-4567</p>
+                <p>Email: contact@lospolloshermanos.com</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com">Facebook</a>
+                <a href="https://twitter.com">Twitter</a>
+                <a href="https://instagram.com">Instagram</a>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'menu' %}">Menu</a>
+                <a href="{% url 'reservations' %}">Reservations</a>
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'signup' %}">Sign Up</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Los Pollos Hermanos. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+</body>
+</html>
